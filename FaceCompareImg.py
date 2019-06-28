@@ -1,5 +1,5 @@
 ##简单的——人脸相似度对比
-##图片对比
+##图片对比图片对比
 import os,dlib,glob,numpy
 from skimage import io # 人脸关键点检测器
 import cv2
