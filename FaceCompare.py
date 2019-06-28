@@ -29,14 +29,13 @@ print('识别训练完毕！')
 
 try:
     ##    test_path=input('请输入要检测的图片的路径（记得加后缀哦）:')
-    img = io.imread(r'images\3.jpg')
+    img = io.imread(r'images\2134.jpg')
     dets = detector(img, 1)
 except:
     print('输入路径有误，请检查！')
 
 dist = []
 for k, d in enumerate(dets):
-    print("aaaaaaaaaaa")
     shape = sp(img, d)
     #print(shape)
     face_descriptor = facerec.compute_face_descriptor(img, shape)
@@ -61,6 +60,7 @@ if dist:
         cv2.rectangle(img, (d.left(),d.top()),(d.right(),d.bottom()),(255,0,0),1,8,0)
         cv2.putText(img, cd_sorted[0][0], (d.left(),d.top()-10), cv2.FONT_HERSHEY_COMPLEX, 1, (255,0,0), 1)
         print('the perion is {}'.format(cd_sorted[0][0]))
+        print('the perion is rate{}'.format(cd_sorted[0][1]))
         cv2.imshow("Image", img)
         cv2.waitKey(0)
 else:
