@@ -7,17 +7,17 @@ import cv2
 ###python test.py --image images/jemma.png
 
 # construct the argument parse and parse the arguments
-#ap = argparse.ArgumentParser()
-#ap.add_argument("-i", "--image", required=True,help="path to input image")
-#ap.add_argument("-p", "--prototxt", required=True, help="path to Caffe 'deploy' prototxt file")
-#ap.add_argument("-m", "--model", required=True, help="path to Caffe pre-trained model")
-#ap.add_argument("-l", "--labels", required=True, help="path to ImageNet labels (i.e., syn-sets)")
-#args = vars(ap.parse_args())
-args = {}
-args["image"] = 'images/qw.jpg'
-args["prototxt"] = 'bvlc_googlenet.prototxt'
-args["model"] = 'bvlc_googlenet.caffemodel'
-args["labels"] = 'synset_words.txt'
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True,help="path to input image")
+ap.add_argument("-p", "--prototxt", required=True, help="path to Caffe 'deploy' prototxt file")
+ap.add_argument("-m", "--model", required=True, help="path to Caffe pre-trained model")
+ap.add_argument("-l", "--labels", required=True, help="path to ImageNet labels (i.e., syn-sets)")
+args = vars(ap.parse_args())
+#args = {}
+#args["image"] = 'images/qw.jpg'
+#args["prototxt"] = 'bvlc_googlenet.prototxt'
+#args["model"] = 'bvlc_googlenet.caffemodel'
+#args["labels"] = 'synset_words.txt'
 # load the input image from disk
 image = cv2.imread(args["image"])
 
